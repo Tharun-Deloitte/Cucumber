@@ -27,14 +27,17 @@ public class LoginStepDefinition {
     @When("^User enters the login details (.+) (.+) and clicks on login$")
     public void user_enters_the_login_details_dssdfsfs_sdvsss_and_clicks_on_login(String username,String password) {
         // Write code here that turns the phrase above into concrete actions
-        System.out.println(username+password);
+        loginPage.enterlogindetails(username,password);
     }
     @Then("Error msg is shown")
     public void error_msg_is_shown() {
         // Write code here that turns the phrase above into concrete actions
-        System.out.println("Error msg is displayed");
+        loginPage.Verifyerrormsg();
     }
 
 
-
+    @Then("Verify user is in home page")
+    public void verifyUserIsInHomePage() {
+        loginPage.verifylogin();
+    }
 }
