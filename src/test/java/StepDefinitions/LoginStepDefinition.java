@@ -1,10 +1,8 @@
 package StepDefinitions;
 
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.testng.Assert;
 import utils.TestContextSetup;
 import PageObjects.LoginPage;
 
@@ -25,7 +23,7 @@ public class LoginStepDefinition {
     }
 
     @When("^User enters the login details (.+) (.+) and clicks on login$")
-    public void user_enters_the_login_details_dssdfsfs_sdvsss_and_clicks_on_login(String username,String password) {
+    public void user_enters_the_login_details_and_clicks_on_login(String username, String password) {
         // Write code here that turns the phrase above into concrete actions
         loginPage.enterlogindetails(username,password);
     }

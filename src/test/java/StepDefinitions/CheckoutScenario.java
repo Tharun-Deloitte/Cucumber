@@ -34,4 +34,14 @@ public class CheckoutScenario {
         homepage.GetCartCountBefore();
 
     }
+
+    @And("Delete one product from cart")
+    public void deleteOneProductFromCart() {
+        homepage.Deleteitem();
+    }
+
+    @Then("Cart number decreases")
+    public void cartNumberDecreases() throws InterruptedException {
+        homepage.CartCountDecreases();
+    }
 }
