@@ -21,3 +21,10 @@ Feature: Home page and cart page scenarios
       And Delete one product from cart
       Then Cart number decreases
 
+
+      @home
+      Scenario: Validate error msg in Checkout page
+        Given Verfy user is in checkout page
+        When User clicks continue button
+        Then Error for checkout page is displayed
+

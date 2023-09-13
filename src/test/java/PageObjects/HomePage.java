@@ -16,6 +16,8 @@ public class HomePage {
     By removefromcart=By.xpath("//button[@class=\"btn btn_secondary btn_small btn_inventory\"][1]");
     By back=By.cssSelector("button.btn");
     By cartcount=By.cssSelector("span.shopping_cart_badge");
+    By cartpage=By.cssSelector("a.shopping_cart_link");
+    By Checkoutpage=By.id("checkout");
     int BeforeCartcount;
     int AfterCartcount;
 
@@ -53,11 +55,18 @@ public class HomePage {
     }
 
     public void CartCountDecreases() throws InterruptedException {
-        Thread.sleep(3000);
         AfterCartcount= Integer.parseInt(driver.findElement(cartcount).getText().trim());
         System.out.println(AfterCartcount);
         System.out.println(BeforeCartcount);
         assert BeforeCartcount==AfterCartcount+1;
+    }
+
+    public void gotocartpage(){
+        driver.findElement(cartpage).click();
+    }
+
+    public void clickoncheckoutpage(){
+        driver.findElement(Checkoutpage).click();
     }
 
 
